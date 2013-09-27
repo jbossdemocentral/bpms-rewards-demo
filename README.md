@@ -1,5 +1,5 @@
-JBoss BPM Suite Rewards Demo Guide
-==================================
+JBoss BPM Suite Rewards Demo 
+============================
 
 Demo based on JBoss BPM Suite product.
 
