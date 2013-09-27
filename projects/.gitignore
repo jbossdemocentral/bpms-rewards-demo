@@ -4,4 +4,3 @@ target/
 RemoteSystemsTempFiles/
 .index/
 .niogit/
-*.zip
