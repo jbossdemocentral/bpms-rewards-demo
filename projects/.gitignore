@@ -4,3 +4,6 @@ target/
 RemoteSystemsTempFiles/
 .index/
 .niogit/
+.settings
+.classpath
+.project
