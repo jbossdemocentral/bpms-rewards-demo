@@ -38,12 +38,6 @@
         </dependency>
         <dependency>
             <groupId>org.jbpm</groupId>
-            <artifactId>jbpm-human-task</artifactId>
-            <version>${bpm-suite-version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jbpm</groupId>
             <artifactId>jbpm-persistence-jpa</artifactId>
             <version>${bpm-suite-version}</version>
             <scope>provided</scope>
