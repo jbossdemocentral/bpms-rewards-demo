@@ -24,7 +24,7 @@ public class RewardsApprovalTest extends JbpmJUnitBaseTestCase {
 	private static RuntimeEngine runtime;
 	private static TaskService taskService;
 	private static Map<String, Object> params;
-	
+
 	public RewardsApprovalTest() {
 		super(true, false);
 	}
@@ -52,6 +52,7 @@ public class RewardsApprovalTest extends JbpmJUnitBaseTestCase {
 	@Test
 	public void rewardApprovedTest() {
 		KieSession ksession = runtime.getKieSession();
+		
 		// register work items
         ksession.getWorkItemManager().registerWorkItemHandler("Log", new SystemOutWorkItemHandler());
         ksession.getWorkItemManager().registerWorkItemHandler("Email", new SystemOutWorkItemHandler());
@@ -79,6 +80,7 @@ public class RewardsApprovalTest extends JbpmJUnitBaseTestCase {
 	@Test
 	public void rewardRejectedTest() {
 		KieSession ksession = runtime.getKieSession();
+		
 		// register work items
         ksession.getWorkItemManager().registerWorkItemHandler("Log", new SystemOutWorkItemHandler());
         ksession.getWorkItemManager().registerWorkItemHandler("Email", new SystemOutWorkItemHandler());

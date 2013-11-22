@@ -63,12 +63,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jbpm</groupId>
-            <artifactId>jbpm-persistence-jpa</artifactId>
-            <version>${bpm-suite-version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.5</version>
