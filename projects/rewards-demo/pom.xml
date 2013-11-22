@@ -59,7 +59,13 @@
         <dependency>
             <groupId>org.jbpm</groupId>
             <artifactId>jbpm-test</artifactId>
-						<version>${bpm-suite-version}</version>
+            <version>${bpm-suite-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-persistence-jpa</artifactId>
+            <version>${bpm-suite-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -68,9 +74,27 @@
             <version>1.7.5</version>
         </dependency>
         <dependency>
-        	<groupId>org.slf4j</groupId>
-        	<artifactId>slf4j-log4j12</artifactId>
-        	<version>1.7.5</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.2.0.Final</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.2.0.Final</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.btm</groupId>
+            <artifactId>btm</artifactId>
+            <scope>test</scope>
+            <version>3.0.0.Alpha1-jbossorg-1</version>
         </dependency>
     </dependencies>
 
