@@ -12,16 +12,27 @@
         <bpm-suite-version>6.0.0-redhat-5</bpm-suite-version>
     </properties>
 
+		<repositories>
+				<repository>
+					<id>soa-brms-6-build</id>
+					<name>JBoss SOA BRMS 6 Build Repository</name>
+					<url>http://download.devel.redhat.com/brewroot/repos/soa-brms-6-build/latest/maven/</url>
+					<layout>default</layout>
+					<releases>  
+						<enabled>true</enabled>  
+						<updatePolicy>never</updatePolicy>  
+					</releases>  
+					<snapshots>  
+						<enabled>true</enabled>  
+						<updatePolicy>never</updatePolicy>  
+					</snapshots>  
+				</repository> 
+		</repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.drools</groupId>
             <artifactId>knowledge-api</artifactId>
-            <version>${bpm-suite-version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jbpm</groupId>
-            <artifactId>jbpm-human-task</artifactId>
             <version>${bpm-suite-version}</version>
             <scope>provided</scope>
         </dependency>
@@ -48,7 +59,7 @@
         <dependency>
             <groupId>org.jbpm</groupId>
             <artifactId>jbpm-test</artifactId>
-						<version>${bpm-suite-version}</version>
+            <version>${bpm-suite-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -57,9 +68,27 @@
             <version>1.7.5</version>
         </dependency>
         <dependency>
-        	<groupId>org.slf4j</groupId>
-        	<artifactId>slf4j-log4j12</artifactId>
-        	<version>1.7.5</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.2.0.Final</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.2.0.Final</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.btm</groupId>
+            <artifactId>btm</artifactId>
+            <scope>test</scope>
+            <version>3.0.0.Alpha1-jbossorg-1</version>
         </dependency>
     </dependencies>
 

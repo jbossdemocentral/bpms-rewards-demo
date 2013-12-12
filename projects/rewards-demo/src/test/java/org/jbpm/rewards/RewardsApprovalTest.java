@@ -1,86 +1,75 @@
 package org.jbpm.rewards;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-import org.drools.runtime.StatefulKnowledgeSession;
-import org.drools.runtime.process.ProcessInstance;
 import org.jbpm.process.instance.impl.demo.SystemOutWorkItemHandler;
-import org.jbpm.process.workitem.wsht.SyncWSHumanTaskHandler;
-import org.jbpm.task.AccessType;
-import org.jbpm.task.TaskService;
-import org.jbpm.task.query.TaskSummary;
-import org.jbpm.task.service.ContentData;
-import org.jbpm.test.JbpmJUnitTestCase;
+import org.jbpm.test.JbpmJUnitBaseTestCase;
+import org.junit.Before;
 import org.junit.Test;
+import org.kie.api.io.ResourceType;
+import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.manager.RuntimeEngine;
+import org.kie.api.runtime.process.ProcessInstance;
+import org.kie.api.task.TaskService;
+import org.kie.api.task.model.TaskSummary;
+import org.kie.internal.runtime.manager.context.ProcessInstanceIdContext;
 
 /**
  * This is a sample file to launch a process.
  */
-public class RewardsApprovalTest extends JbpmJUnitTestCase {
+public class RewardsApprovalTest extends JbpmJUnitBaseTestCase {
 
-	private static StatefulKnowledgeSession ksession;
+	private static RuntimeEngine runtime;
 	private static TaskService taskService;
 	private static Map<String, Object> params;
-	private static ProcessInstance processInstance;
-	
+
 	public RewardsApprovalTest() {
-		super(true);
+		super(true, false);
 	}
 
-	private void setupTestCase() {		
-		ksession = createKnowledgeSession("rewardsapproval.bpmn2");
-		taskService = getTaskService(ksession);
-		
-		// register human task work item.
-		SyncWSHumanTaskHandler humanTaskHandler = new SyncWSHumanTaskHandler(
-				taskService, ksession);
-			humanTaskHandler.setLocal(true);
-			humanTaskHandler.connect();
-			ksession.getWorkItemManager().registerWorkItemHandler("Human Task", humanTaskHandler);
+	@Before
+	@Override
+	public void setUp() throws Exception {
+		super.setUp();
 	
-		// register other work items
-		ksession.getWorkItemManager().registerWorkItemHandler("Log", new SystemOutWorkItemHandler());
-		ksession.getWorkItemManager().registerWorkItemHandler("Email", new SystemOutWorkItemHandler());
-
+        // initialize process parameters.
 		params = new HashMap<String, Object>();
-		// initialize process parameters.
-		params.put("employee", "erics");
-		params.put("reason", "Amazing demos for JBoss World!");
-		
-	}
+        params.put("employee", "erics");
+        params.put("reason", "Amazing demos for JBoss World!");
 
+        // create runtime
+		Map<String, ResourceType> resources = new HashMap<String, ResourceType>();
+		resources.put("rewardsapproval.bpmn2", ResourceType.BPMN2);
+		createRuntimeManager(Strategy.SINGLETON, resources);
+		runtime = getRuntimeEngine(ProcessInstanceIdContext.get());
+
+		// create task service
+		taskService = runtime.getTaskService();
+	}
+	
 	@Test
 	public void rewardApprovedTest() {
-		setupTestCase();
+		KieSession ksession = runtime.getKieSession();
 		
-		// start process.
-		processInstance = ksession.startProcess("org.jbpm.approval.rewards", params);
-
+		// register work items
+        ksession.getWorkItemManager().registerWorkItemHandler("Log", new SystemOutWorkItemHandler());
+        ksession.getWorkItemManager().registerWorkItemHandler("Email", new SystemOutWorkItemHandler());
+		
+        // start process.
+		ProcessInstance processInstance = ksession.startProcess("org.jbpm.approval.rewards", params);
+		
 		// execute task by Mary from HR.
-		List<TaskSummary> list = taskService.getTasksAssignedAsPotentialOwner("mary", new ArrayList<String>(), "en-UK");
+		List<TaskSummary> list = taskService.getTasksAssignedAsPotentialOwner("mary", "en-UK");
 		TaskSummary task = list.get(0);
-		taskService.claim(task.getId(), "mary", new ArrayList<String>());
+		taskService.claim(task.getId(), "mary");
 		taskService.start(task.getId(), "mary");
 		
 		Map<String, Object> taskParams = new HashMap<String, Object>();
 		taskParams.put("Explanation", "Great work");
 		taskParams.put("Outcome", "Approved");
-		
-		// Serialized and inserted.
-		ContentData content = new ContentData();
-		content.setAccessType(AccessType.Inline);
-		content.setContent(getByteArrayFromObject(taskParams));
-		
-		// add results of task.
-		taskService.complete(task.getId(), "mary", content);
-		
+		taskService.complete(task.getId(), "mary", taskParams);
 
 		// test for completion and in correct end node.
 		assertProcessInstanceCompleted(processInstance.getId(), ksession);
@@ -90,58 +79,30 @@ public class RewardsApprovalTest extends JbpmJUnitTestCase {
 	
 	@Test
 	public void rewardRejectedTest() {
-		setupTestCase();
+		KieSession ksession = runtime.getKieSession();
 		
-		// start process.
-		processInstance = ksession.startProcess("org.jbpm.approval.rewards", params);
+		// register work items
+        ksession.getWorkItemManager().registerWorkItemHandler("Log", new SystemOutWorkItemHandler());
+        ksession.getWorkItemManager().registerWorkItemHandler("Email", new SystemOutWorkItemHandler());
+		
+		ProcessInstance processInstance = ksession.startProcess("org.jbpm.approval.rewards", params);
 
 		// execute task by John from HR.
-		List<TaskSummary> list = taskService.getTasksAssignedAsPotentialOwner("john", new ArrayList<String>(), "en-UK");
+		List<TaskSummary> list = taskService.getTasksAssignedAsPotentialOwner("john", "en-UK");
 		TaskSummary task = list.get(0);
-		taskService.claim(task.getId(), "john", new ArrayList<String>());
+		taskService.claim(task.getId(), "john");
 		taskService.start(task.getId(), "john");
 		
 		Map<String, Object> taskParams = new HashMap<String, Object>();
 		taskParams.put("Explanation", "Too complicated for me");
 		taskParams.put("Outcome", "Rejected");
-		
-		// Serialized and inserted.
-		ContentData content = new ContentData();
-		content.setAccessType(AccessType.Inline);
-		content.setContent(getByteArrayFromObject(taskParams));
-		
 		// add results of task.
-		taskService.complete(task.getId(), "john", content);
+		taskService.complete(task.getId(), "john", taskParams);
 		
-
 		// test for completion and in correct end node.
 		assertProcessInstanceCompleted(processInstance.getId(), ksession);
 		assertNodeTriggered(processInstance.getId(), "End Rejected");
 		ksession.dispose();
 	}
 	
-	/**
-	 * Converts an object to a serialized byte array.
-	 * 
-	 * @param obj Object to be converted.
-	 * @return byte[] Serialized array representing the object.
-	 */
-	public static byte[] getByteArrayFromObject(Object obj) {
-	    byte[] result = null;
-	       
-	    try {
-	        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-	        ObjectOutputStream oos = new ObjectOutputStream(baos);
-	        oos.writeObject(obj);
-	        oos.flush();
-	        oos.close();
-	        baos.close();
-	        result = baos.toByteArray();
-	    } catch (IOException ioEx) {
-	        Logger.getLogger("UtilityMethods").error("Error converting object to byteArray", ioEx);
-	    }
-	        
-	    return result;
-	}
-
 }
