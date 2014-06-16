@@ -10,9 +10,9 @@ SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/rewards-demo
-EAP=jboss-eap-6.1.0.zip
-BPMS=jboss-bpms-6.0.0.Beta1-deployable-eap6.x.zip
-VERSION=6.0.0.Beta
+EAP=jboss-eap-6.1.1.zip
+BPMS=jboss-bpms-6.0.1.GA-redhat-4-deployable-eap6.x.zip
+VERSION=6.0.1.GA
 
 # wipe screen.
 clear 
@@ -20,7 +20,7 @@ clear
 echo
 echo "#################################################################"
 echo "##                                                             ##"   
-echo "##  Setting up the ${DEMO}                               ##"
+echo "##  Setting up the ${DEMO}                                ##"
 echo "##                                                             ##"   
 echo "##                                                             ##"   
 echo "##     ####  ####   #   #      ### #   # ##### ##### #####     ##"
@@ -31,9 +31,9 @@ echo "##     ####  #     #     #    ###  ##### #####   #   #####     ##"
 echo "##                                                             ##"   
 echo "##                                                             ##"   
 echo "##  brought to you by,                                         ##"   
-echo "##             ${AUTHORS}               ##"
+echo "##             ${AUTHORS}                                ##"
 echo "##                                                             ##"   
-echo "##  ${PROJECT}            ##"
+echo "##  ${PROJECT}             ##"
 echo "##                                                             ##"   
 echo "#################################################################"
 echo
@@ -41,7 +41,7 @@ echo
 command -v mvn -q >/dev/null 2>&1 || { echo >&2 "Maven is required but not installed yet... aborting."; exit 1; }
 
 # make some checks first before proceeding.	
-if [[ -r $SRC_DIR/$EAP || -L $SRC_DIR/$EAP ]]; then
+if [ -r $SRC_DIR/$EAP ] || [ -L $SRC_DIR/$EAP ]; then
 		echo EAP sources are present...
 		echo
 else
@@ -89,11 +89,9 @@ echo "  - enabling demo accounts role setup in application-roles.properties file
 echo
 cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
 
-# TODO: port project, then add here to import.
-#
-#echo "  - setting up demo projects..."
-#echo
-#cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+echo "  - setting up demo projects..."
+echo
+cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
 
 echo "  - setting up standalone.xml configuration adjustments..."
 echo
@@ -106,17 +104,6 @@ chmod u+x $JBOSS_HOME/bin/standalone.sh
 
 echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
-
-# TODO: create this jar for deployment help of demo to fill tables.
-#
-#echo "PRE-LOAD DEMO WITH PROCESS INSTANCES"
-#echo "===================================="
-#echo "To load the BPM with a set of process instances, you can run the following command"
-#echo "after you start JBoss BPM Suite, build and deploy the BPM project, then you can"
-#echo "use the helper jar file found in the support directory as follows:"
-#echo 
-#echo "   java -jar jboss-demo-client.jar erics bpmsuite" 
-#echo
 
 echo "$PRODUCT $VERSION $DEMO Setup Complete."
 echo
