@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Red Hat JBoss BPM Suite - Building the Rewards Business Process Workshop</title>
+
+		<meta name="description" content="Online BPM workshop.">
+		<meta name="author" content="Eric D. Schabell">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                    <h3>Lab 12 - Create a new project</h3>
+				</section>
+
+                <section>
+                    <h2>Lab Goal</h2>
+                    <h4>To create a new project in the JBoss BPM Suite workbench</h4>
+                </section>
+
+                <section>
+                    <h2>Help / Fast Forward</h2>
+                    <h4>(coming soon... repo to be made available)</h4>
+                    <ul>
+                        <li>In case you get stuck we provide completed git repo with all assets</li>
+                        <li>From main menu, select:</li>
+                        <ul>
+                            <li><code>AUTHORING -> ADMINSTRATION</code></li>
+                            <li><code>REPOSITORIES -> CLONE REPOSITORY</code></li>
+                        </ul>
+                        <li>In pop-up window, provide following:</li>
+                        <ul>
+                            <li><code>Repository name: rewards</code></li>
+                            <li><code>Organizational unit: Demos</code></li>
+                            <li><code>Git URL: https://github.com/eschabell/bpmsuite-rewards-repo.git</code></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4>(coming soon... repo to be made available)</h4>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image176.png">
+                </section>
+
+                <section>
+                    <h2>JBoss BPM Suite structure</h2>
+                    <ul>
+                        <li>Uses this framework for organizing & deploying projects:</li>
+                        <ul>
+                            <li>Organizations</li>
+                            <li>Repositories</li>
+                            <li>Projects</li>
+                            <li>Packages</li>
+                        </ul>
+
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image04.png" />
+                </section>
+
+                <section>
+					<h2>Add organizational unit</h2>
+                    <ul>
+                        <li>After login you head to the admistrative perspective:</li>
+                        <ul>
+                            <li><code>AUTHORING -> ADMINISTRATION</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image136.png" />
+                    </div>
+				</section>
+
+                <section>
+                    <h2>Add organizational unit</h2>
+                    <ul>
+                        <li>Now we need to manage our organizational units to add a new one:</li>
+                        <ul>
+                            <li><code>ORGANIZATIONAL UNIT -> MANAGE ORGANIZATIONAL UNITS</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image137.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Add organizational unit</h2>
+                    <ul>
+                        <li>Add button to open a new organizational unit:</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image07.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Add organizational unit</h2>
+                    <ul>
+                        <li>Provide the details</li>
+                        <ul>
+                            <li>click on <code>OK</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image08.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new repository</h2>
+                    <ul>
+                        <li>We need to create or clone a repository</li>
+                        <li>JBoss BPM Suite uses git as repository structure</li>
+                        <ul>
+                            <li>we can clone existing git repositories</li>
+                            <li>we can create a new one</li>
+                        </ul>
+                        <li>For this lab, we create a new repository</li>
+                        <ul>
+                            <li>creating an HR process</li>
+                            <li>the employee Rewards process</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new repository</h2>
+                    <ul>
+                        <li>Now we add a repository to our organizational unit:</li>
+                        <ul>
+                            <li><code>REPOSITORIES -> NEW REPOSITORY</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image133.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new repository</h2>
+                    <ul>
+                        <li>Provide the details</li>
+                        <ul>
+                            <li>click on <code>CREATE</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image134.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new repository</h2>
+                    <ul>
+                        <li>You see the pop-up showing the repository was created.</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image135.png" />
+                        </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>A project is the main organizational and deployment unit for business rules and process assets</li>
+                        <li>A project is modeled as a maven project</li>
+                        <ul>
+                            <li>when deployed, will be deployed as a maven artifact (jar and pom)</li>
+                            <li>when deployed, will be in a maven repo</li>
+                            <li>by default the internal repository from JBoss BPM Suite</li>
+                            <li>it will be ready to be incorporated and consumed by applications</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Head over to the project authoring perspective:</li>
+                        <ul>
+                            <li><code>AUTHORING -> PROJECT AUTHORING</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image138.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Now create a new project:</li>
+                        <ul>
+                            <li><code>NEW ITEM -> PROJECT</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image139.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Provide the details</li>
+                        <ul>
+                            <li>click on <code>OK</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image140.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Create new project</h2>
+                    <ul>
+                        <li>Provide the <code>Group ID</code> details, click on <code>FINISH</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image141.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image142.png">
+                </section>
+
+                <section>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/jteimages/image42.png">
+                </section>
+
+                <section>
+                    <div align="center">
+                        <img height="150" width="99%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/references.jpg">
+                    </div>
+                    <ul>
+                        <li>JBoss BRMS & BPM Suite Articles</li>
+                        <ul>
+                            <li><a href="http://schabell.org/search/label/BRMS">http://schabell.org/search/label/BRMS</a></li>
+                            <li><a href="http://schabell.org/search/label/BPMS">http://schabell.org/search/label/BPMS</a></li>
+                        </ul>
+                        <li>JBoss BPM Suite Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html">Mortgage Demo</a></li>
+                            <li><a href="http://www.schabell.org/2014/05/redhat-jboss-bpmsuite-generic-loan-signal-event.html">Generic Loan Demo</a></li>
+                            <li><a href="http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html">Customer Evaluation Demo</a></li>
+                        </ul>
+                        <li>JBoss bpmPaaS Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2014/05/redhat-openshift-bpmPaaS-genericloan-demo.html">bpmPaaS Generic Loan Process in the Cloud</a></li>
+                            <li><a href="https://openshift.redhat.com/app/console/application_type/quickstart!17804">bpmPaaS Mortgage Process in the Cloud</a></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>JBoss BPM Suite Workshop</h3>
+                    <ul>
+                        <li><a href="lab13.html" target="_blank">Lab 13 - Create a domain model</a></li>
+                    </ul>
+                </section>
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

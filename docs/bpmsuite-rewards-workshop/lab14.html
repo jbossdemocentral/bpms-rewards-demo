@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Red Hat JBoss BPM Suite - Building the Rewards Business Process Workshop</title>
+
+		<meta name="description" content="Online BPM workshop.">
+		<meta name="author" content="Eric D. Schabell">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+                    <h3>Lab 14 - Create rewards process</h3>
+				</section>
+
+                <section>
+                    <h2>Lab Goal</h2>
+                    <h4>To create a new rewards process for submitting employee rewards and processing by HR department</h4>
+                </section>
+
+                <section>
+					<h2>Creating rewards process</h2>
+                    <ul>
+                        <li>In project authoring we will select a new process</li>
+                        <ul>
+                            <li><code>AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> BUSINESS PROCESS</code></li>
+                            <li><code>RESOURCE NAME: rewards-approval</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image186.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image187.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>The process has a single start node</li>
+                        <li>We are going to design a 4 step process:</li>
+                        <ul>
+                            <li><code>Approve Reward</code>, an HR user task</li>
+                            <li><code>Log</code>, a service task (domain specific)</li>
+                            <li><code>Gateway</code>, checks approval or denial of reward</li>
+                            <li><code>Personel File</code>, put note in employee personnel file on award status</li>
+                            <li><code>Email Notice</code>, a service task (domain specific) notify employee of results</li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>You can use Object Library to drag-and-drop nodes</li>
+                        <li>Easier maybe to click a node and use mini-icons to add next node type</li>
+                        <ul>
+                            <li>click on the start node</li>
+                            <li>click on mini-icon of task to add transition & task node</li>
+                            <li>click on wrench-icon to assign <code>User Task</code></li>
+                            <div style="float: right">
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image188.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image189.png" />
+                                <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image190.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>double-click node to name node <code>Approve Reward</code></li>
+                        <li>next open <code>Object Library</code> to select Service Task menu <code>LOG</code> node</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image191.png" />
+                            <img width="40%" height="40%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image192.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image193.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>locate the <code>Connecting Objects</code> menu on in the <code>Object Library</code></li>
+                        <li>click on <code>Sequence Flow</code>, drag-and-drop onto canvas</li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image194.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image195.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>select <code>Sequence Flow</code>, connect arrow from <code>Approve Reward</code> to <code>Log</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image196.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image197.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>click on <code>Log</code> node, use mini-icon to click on <code>XOR Gateway</code> to add gateway</li>
+                        <ul>
+                            <li>we want the process to take one and only one of the offered paths (XOR)</li>
+                        </ul>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image198.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image199.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Save rewards process</h2>
+                    <ul>
+                        <li>Be sure to regularly <code>SAVE</code> your work, found in top right floppy-disk-icon</li>
+                        <li>You will be asked to enter a commit comment to save your work</li>
+                        <li>When you save your work, should see a green bar showing save succeeded</li>
+                    </ul>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image200.png" />
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image201.png" />
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>select mini-icon from gateway node to add the first of two <code>task nodes</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image202.png" />
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image203.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>select mini-icon from gateway node to add the final <code>task node</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image204.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>click on each <code>task nodes</code> wrench-icon to select <code>script tasks</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image205.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>double-click on the top <code>script tasks</code> to assign name: <code>Note Personnel File Rejected</code></li>
+                        <div style="float: right">
+                            <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image206.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>double-click on the second <code>script tasks</code> to assign name: <code>Note Personnel File Accepted</code></li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image207.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>After making a note in the personnel files, we want to notify the employee by email</li>
+                        <li>Add to each path a <code>service task</code> called <code>Email</code></li>
+                        <ul>
+                            <li>drag-and-drop the <code>Email service tasks</code> onto the canvas</li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image208.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>To add transitions, you can drag-and-drop as shown previously</li>
+                        <li>Or you can select the <code>script task</code> and use the mini-icons</li>
+                        <ul>
+                            <li>drag-and-drop the <code>mini-icon transition arrow</code> onto the <code>Email node</code></li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image209.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>Double-click on the top <code>Email node</code> to name it <code>Email Rejected</code></li>
+                        <li>The same for the bottom path, naming it to <code>Email Approved</code></li>
+                        <ul>
+                            <li>these are nodes to send an email of the rewards approval process to the employee</li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image210.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>Double-click on <code>Email Rejected</code>, click on mini-icon <code>End node</code></li>
+                        <li>This adds the final end node, name it <code>End Rejected</code> path for unique name</li>
+                        <ul>
+                            <li>repeat for the accepted path</li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image211.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>Before we move to our process details we will colorize</li>
+                        <li>We start by coloring our user task blue & log task orange</li>
+                        <ul>
+                            <li>select <code>Approve Reward</code>, slide out right <code>Properties</code> tray</li>
+                            <li>under <code>Graphical Settings -> Background Color</code> click on color block</li>
+                            <li>pull down menu, select blue, click on canvas to assign</li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image212.png" />
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image213.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>Next we color our log task orange</li>
+                        <ul>
+                            <li>select <code>Log</code>, slide out right <code>Properties</code> tray</li>
+                            <li>under <code>Graphical Settings -> Background Color</code> click on color block</li>
+                            <li>pull down menu, select orange, click on canvas to assign</li>
+                        </ul>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image214.png" />
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image215.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>The rejected path will be colored in the shade of red to indicate an rejected path</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image216.png" />
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image217.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating rewards process</h2>
+                    <ul>
+                        <li>As a visual indication of the paths we want to take, we use green for the accepted path</li>
+                    </ul>
+                    <div style="float: right">
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image218.png" />
+                        <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image219.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Rewards process</h2>
+                    <h5>(next up, completing process details...)</h5>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image220.png">
+                </section>
+
+                <section>
+                    <img src="https://raw.githubusercontent.com/eschabell/erics-images/master/jteimages/image42.png">
+                </section>
+
+                <section>
+                    <div align="center">
+                        <img height="150" width="99%" src="https://raw.githubusercontent.com/eschabell/erics-images/master/references.jpg">
+                    </div>
+                    <ul>
+                        <li>JBoss BRMS & BPM Suite Articles</li>
+                        <ul>
+                            <li><a href="http://schabell.org/search/label/BRMS">http://schabell.org/search/label/BRMS</a></li>
+                            <li><a href="http://schabell.org/search/label/BPMS">http://schabell.org/search/label/BPMS</a></li>
+                        </ul>
+                        <li>JBoss BPM Suite Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html">Mortgage Demo</a></li>
+                            <li><a href="http://www.schabell.org/2014/05/redhat-jboss-bpmsuite-generic-loan-signal-event.html">Generic Loan Demo</a></li>
+                            <li><a href="http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html">Customer Evaluation Demo</a></li>
+                        </ul>
+                        <li>JBoss bpmPaaS Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2014/05/redhat-openshift-bpmPaaS-genericloan-demo.html">bpmPaaS Generic Loan Process in the Cloud</a></li>
+                            <li><a href="https://openshift.redhat.com/app/console/application_type/quickstart!17804">bpmPaaS Mortgage Process in the Cloud</a></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>JBoss BPM Suite Workshop</h3>
+                    <ul>
+                        <li><a href="lab15.html" target="_blank">Lab 15 - Completing process details</a></li>
+                    </ul>
+                </section>
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
