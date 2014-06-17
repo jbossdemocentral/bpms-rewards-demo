@@ -26,8 +26,8 @@ Notes
 This project is pre-loaded into the JBoss BPM Suite, after starting it you can login,
 examine the rule, process, and data model from within the various product components.
 
-There is a workshop in the [docs directory](docs/bpmsuite-rewards-project/index.html) that will show you how to build this demo from
-scratch. 
+There is a workshop in the [docs directory](https://github.com/eschabell/bpms-rewards-demo/tree/master/docs/bpmsuite-rewards-workshop) 
+that will show you how to build this demo from scratch. 
 
 
 Released versions
