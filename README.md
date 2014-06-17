@@ -25,13 +25,9 @@ Notes
 
 This project is pre-loaded into the JBoss BPM Suite, after starting it you can login,
 examine the rule, process, and data model from within the various product components.
-You can then build and deploy the project, thereby generating the kjar maven artifact 
-that the developer team needs to begin working on any application using this projects
-knowledge artifacts.
 
-Once you setup the project in JBoss Developer Studio (see the docs), you can use maven 
-to pull in the kjar dependency, then examine the unit tests to discover how an application
-can interact with a knowledge project (rules, processes, and model).
+There is a workshop in the [docs directory](docs/bpmsuite-rewards-project/index.html) that will show you how to build this demo from
+scratch. 
 
 
 Released versions
