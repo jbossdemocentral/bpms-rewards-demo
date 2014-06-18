@@ -17,7 +17,7 @@ Quickstart
 
 6. Rewards demo pre-installed as project.
 
-8. Read the documentation found in the docs directory & enjoy JBoss BPM Suite!
+7. Read the documentation found in the docs directory & enjoy JBoss BPM Suite!
 
 
 Notes
