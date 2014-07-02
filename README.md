@@ -29,6 +29,11 @@ examine the rule, process, and data model from within the various product compon
 There is a workshop in the [docs directory](https://github.com/eschabell/bpms-rewards-demo/tree/master/docs/bpmsuite-rewards-workshop) 
 that will show you how to build this demo from scratch. 
 
+Supporting Articles
+-------------------
+
+[Red Hat JBoss BPM Suite - all product demos updated for version 6.0.2.GA release](http://www.schabell.org/2014/07/redhat-jboss-bpmsuite-product-demos-6.0.2-updated.html)
+
 
 Released versions
 -----------------
