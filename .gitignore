@@ -5,3 +5,4 @@ RemoteSystemsTempFiles/
 .index/
 .niogit/
 *.zip
+*.jar
