@@ -47,6 +47,8 @@ See the tagged releases for the following versions of the product:
 - v1.0 - JBoss BPM Suite 6.0.1, JBoss EAP 6.1.1, and migrated from BRMS 5.3.
 
 
+[![Video Rewards Run](https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image309.png)](http://vimeo.com/ericschabell/bpms-hr-employee-rewards-demo-run)
+
 ![Process](https://github.com/eschabell/bpms-rewards-demo/blob/master/docs/demo-images/rewards-process.png?raw=true)
 
 ![Process & Task Dashboard](https://github.com/eschabell/bpms-customer-evaluation-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
