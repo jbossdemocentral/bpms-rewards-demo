@@ -40,6 +40,8 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
+- v1.3 - JBoss BPM Suite 6.0.3 installer with rewards demo installed.
+
 - v1.2 - JBoss BPM Suite 6.0.2 installer used, with rewards demo installed.
 
 - v1.1 - JBoss BPM Suite 6.0.2, JBoss EAP 6.1.1, and migrated from BRMS 5.3.
