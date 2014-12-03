@@ -5,7 +5,7 @@ JBoss BPM Suite Rewards Demo
 Quickstart
 ----------
 
-1. [Download and unzip.](https://github.com/eschabell/bpms-rewards-demo/archive/master.zip)
+1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-rewards-demo/archive/master.zip)
 
 2. Add products to installs directory.
 
@@ -26,7 +26,7 @@ Notes
 This project is pre-loaded into the JBoss BPM Suite, after starting it you can login,
 examine the rule, process, and data model from within the various product components.
 
-There is a workshop in the [docs directory](https://github.com/eschabell/bpms-rewards-demo/tree/master/docs/bpmsuite-rewards-workshop) 
+There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com)
 that will show you how to build this demo from scratch. 
 
 Supporting Articles
@@ -40,6 +40,8 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
+- v1.3 - moved to JBoss Demo Central.
+
 - v1.3 - JBoss BPM Suite 6.0.3 installer with rewards demo installed.
 
 - v1.2 - JBoss BPM Suite 6.0.2 installer used, with rewards demo installed.
@@ -49,9 +51,9 @@ See the tagged releases for the following versions of the product:
 - v1.0 - JBoss BPM Suite 6.0.1, JBoss EAP 6.1.1, and migrated from BRMS 5.3.
 
 
-[![Video Rewards Run](https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image309.png)](http://vimeo.com/ericschabell/bpms-hr-employee-rewards-demo-run)
+[![Video Rewards Run](https://raw.githubusercontent.com/jbossdemocentral/erics-images/master/brms_bpms_workshop/image309.png)](http://vimeo.com/ericschabell/bpms-hr-employee-rewards-demo-run)
 
-![Process](https://github.com/eschabell/bpms-rewards-demo/blob/master/docs/demo-images/rewards-process.png?raw=true)
+![Process](https://github.com/jbossdemocentral/bpms-rewards-demo/blob/master/docs/demo-images/rewards-process.png?raw=true)
 
-![Process & Task Dashboard](https://github.com/eschabell/bpms-customer-evaluation-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
+![Process & Task Dashboard](https://github.com/jbossdemocentral/bpms-customer-evaluation-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
 
