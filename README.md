@@ -39,6 +39,33 @@ Install on your machine
 
 7. Read the documentation found in the docs directory & enjoy JBoss BPM Suite!
 
+Docker
+-------------------------
+
+The following steps can be used to configure and run the demo in a docker container
+
+1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-rewards-demo/archive/master.zip)
+
+2. Add product installer to installs directory.
+
+3. Build demo image
+
+	```
+	docker build -t jbossdemocentral/bpms-rewards-demo .
+	```
+4. Start demo container
+
+	```
+	docker run --it -p 8080:8080 -p 9990:9990 jbossdemocentral/bpms-rewards-demo
+	```
+5. Login to http://<DOCKER_HOST>:8080/business-central (u:erics / p:bpmsuite1!)
+
+6. Rewards demo pre-installed as project.
+
+7. Read the documentation found in the docs directory & enjoy JBoss BPM Suite!
+
+Additional information can be found in the jbossdemocentral docker [developer repository](https://github.com/jbossdemocentral/docker-developer)
+
 
 Notes
 -----
