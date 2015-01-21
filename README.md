@@ -3,9 +3,28 @@ JBoss BPM Suite Rewards Demo
 This is the HR employee rewards demo that provides exammples of human task integration, form designer
 and a custom email work item handler.
 
+There are three options available to you for using this demo; local, OpenShift and Docker.
 
-Install with one click in xPaaS (bpmPaaS)
------------------------------------------
+
+Option 1 - Install on your machine
+----------------------------------
+1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-rewards-demo/archive/master.zip)
+
+2. Add products to installs directory.
+
+3. Run 'init.sh' or 'init.bat' file. 'init.bat' must be run with Administrative privileges.
+
+4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.1/bin directory.
+
+5. Login to http://localhost:8080/business-central  (u:erics / p:bpmsuite1!).
+
+6. Rewards demo pre-installed as project.
+
+7. Read the documentation found in the docs directory & enjoy JBoss BPM Suite!
+
+
+Option 2 - Install with one click in xPaaS (bpmPaaS)
+----------------------------------------------------
 After clicking button, ensure `Gear` size is set to `medium`:
 
 [![Click to install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Install bpmPaaS.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=https://raw.githubusercontent.com/jbossdemocentral/cartridge-bpmPaaS-rewards-demo/master/metadata/manifest.yml&name=rewards&gear_profile=medium&initial_git_url=)
@@ -23,26 +42,8 @@ Once installed you can use the JBoss BPM Suite logins:
    * u: mary   p: bpmsuite (manager)
 
 
-Install on your machine
------------------------
-1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-rewards-demo/archive/master.zip)
-
-2. Add products to installs directory.
-
-3. Run 'init.sh' or 'init.bat' file. 'init.bat' must be run with Administrative privileges.
-
-4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.1/bin directory.
-
-5. Login to http://localhost:8080/business-central  (u:erics / p:bpmsuite1!).
-
-6. Rewards demo pre-installed as project.
-
-7. Read the documentation found in the docs directory & enjoy JBoss BPM Suite!
-
-
-Optional Docker Install
------------------------
-
+Option 3 - Generate docker install
+----------------------------------
 The following steps can be used to configure and run the demo in a docker container
 
 1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-rewards-demo/archive/master.zip)
@@ -81,6 +82,10 @@ that will show you how to build this demo from scratch.
 
 Supporting Articles
 -------------------
+[3 shockingly easy ways into JBoss rules, events, planning & BPM](http://www.schabell.org/2015/01/3-shockingly-easy-ways-into-jboss-brms-bpmsuite.html)
+
+[Launching Into the Clouds With 2 New OpenShift Primer bpmPaaS Quickstarts](http://www.schabell.org/2014/10/launching-into-clouds-with-2-new-openshift-primer-bpmpaas-quickstarts.html)
+
 [Red Hat JBoss BPM Suite - all product demos updated for version 6.0.2.GA release](http://www.schabell.org/2014/07/redhat-jboss-bpmsuite-product-demos-6.0.2-updated.html)
 
 
