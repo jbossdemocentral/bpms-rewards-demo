@@ -84,6 +84,8 @@ Supporting Articles
 -------------------
 [3 shockingly easy ways into JBoss rules, events, planning & BPM](http://www.schabell.org/2015/01/3-shockingly-easy-ways-into-jboss-brms-bpmsuite.html)
 
+[How To Duplicate Artifacts In JBoss BPM Suite in 3 Easy Steps](http://www.schabell.org/2014/10/how-to-duplicate-artifacts-within-jboss-bpmsuite-in-3-easy-steps.html)
+
 [Launching Into the Clouds With 2 New OpenShift Primer bpmPaaS Quickstarts](http://www.schabell.org/2014/10/launching-into-clouds-with-2-new-openshift-primer-bpmpaas-quickstarts.html)
 
 [Red Hat JBoss BPM Suite - all product demos updated for version 6.0.2.GA release](http://www.schabell.org/2014/07/redhat-jboss-bpmsuite-product-demos-6.0.2-updated.html)
