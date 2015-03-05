@@ -1,0 +1,24 @@
+{
+  "name":"JBoss BPM Suite Rewards Demo",
+  "summary":"This is the HR employee rewards demo that provides exammples of human task integration, form designer, data modeling and a custom email work item handler.
+
+Install options - local, OpenShift and Docker.",
+  "author":"Andrew Block, Eric D. Schabell"
+  "categories":["bpms"],
+  "level":"Easy Peasy",
+  "published":true,
+  "prerequisites":"Java 1.7",
+  "targetProduct":"JBoss BPM Suite",
+  "productVersion":"JBoss BPM Suite 6.0.1 onwards",
+  "technologies": ["JBoss BPM Suite"],
+  "links": [ 
+    { 
+      "name":"Code",
+      "url":"https://github.com/jbossdemocentral/bpms-rewards-demo"
+    },
+    { 
+      "name":"Install bpmPaaS",
+      "url":"https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=https://raw.githubusercontent.com/jbossdemocentral/cartridge-bpmPaaS-rewards-demo/master/metadata/manifest.yml&name=rewards&gear_profile=medium&initial_git_url="
+    }
+  ]
+}
