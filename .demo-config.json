@@ -1,8 +1,6 @@
 {
   "name":"JBoss BPM Suite Rewards Demo",
-  "summary":"This is the HR employee rewards demo that provides exammples of human task integration, form designer, data modeling and a custom email work item handler.
-
-Install options - local, OpenShift and Docker.",
+  "summary":"This is the HR employee rewards demo that provides exammples of human task integration, form designer, data modeling and a custom email work item handler. Install options - local, OpenShift and Docker.",
   "author":"Andrew Block, Eric D. Schabell"
   "categories":["bpms"],
   "level":"Easy Peasy",
