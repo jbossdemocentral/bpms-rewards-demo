@@ -76,6 +76,11 @@ Notes
 This project is pre-loaded into the JBoss BPM Suite, after starting it you can login,
 examine the rule, process, and data model from within the various product components.
 
+After claiming the user task as a manager (to approve or deny the award), if task completion takes longer
+than 2 minutes it will te reassigned back into the group so other managers can claim it. The short time frame
+of 2 minutes is for demo purposes, should talk about days to complete instead as if a manager that claimed a
+task got sick and failed to complete the claimed task.
+
 There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com)
 that will show you how to build this demo from scratch. 
 
@@ -98,6 +103,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v1.5 - JBoss BPM Suite 6.0.3 installer with user task reassignment claimed tasks to group after 2 minutes.
 
 - v1.5 - JBoss BPM Suite 6.0.3 installer with optional docker installation.
 
