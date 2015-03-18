@@ -104,7 +104,7 @@ Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
-- v1.5 - JBoss BPM Suite 6.0.3 installer with user task reassignment claimed tasks to group after 2 minutes.
+- v1.6 - JBoss BPM Suite 6.0.3 installer with user task reassignment claimed tasks to group after 2 minutes.
 
 - v1.5 - JBoss BPM Suite 6.0.3 installer with optional docker installation.
 
