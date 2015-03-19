@@ -77,8 +77,8 @@ This project is pre-loaded into the JBoss BPM Suite, after starting it you can l
 examine the rule, process, and data model from within the various product components.
 
 After claiming the user task as a manager (to approve or deny the award), if task completion takes longer
-than 2 minutes it will te reassigned back into the group so other managers can claim it. The short time frame
-of 2 minutes is for demo purposes, should talk about days to complete instead as if a manager that claimed a
+than 1 minutes it will te reassigned back into the group so other managers can claim it. The short time frame
+of 1 minutes is for demo purposes, should talk about days to complete instead as if a manager that claimed a
 task got sick and failed to complete the claimed task.
 
 There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com)
@@ -97,14 +97,28 @@ Supporting Articles
 
 [Launching Into the Clouds With 2 New OpenShift Primer bpmPaaS Quickstarts](http://www.schabell.org/2014/10/launching-into-clouds-with-2-new-openshift-primer-bpmpaas-quickstarts.html)
 
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 17 Running Rewards Project)](http://www.schabell.org/2014/09/redhat-jboss-bpmsuite-online-workshop-lab17-running-rewards-project.html)
+
 [Red Hat JBoss BPM Suite - all product demos updated for version 6.0.2.GA release](http://www.schabell.org/2014/07/redhat-jboss-bpmsuite-product-demos-6.0.2-updated.html)
+
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 16 Creating User Task Forms)](http://www.schabell.org/2014/06/redhat-jboss-bpmsuite-online-workshop-rewards-lab16-user-task-forms.html)
+
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 15 Completing Process Details)](http://www.schabell.org/2014/06/redhat-jboss-bpmsuite-online-workshop-rewards-lab15-process-details.html)
+
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 14 Create Rewards Process)](http://www.schabell.org/2014/06/redhat-jboss-bpmsuite-online-workshop-rewards-lab14-rewards-process.html)
+
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 13 - Creating Domain Model)](http://www.schabell.org/2014/06/redhat-jboss-bpmsuite-online-workshop-rewards-lab13-creating-domain-model.html)
+
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 12 Creating Rewards Project)](http://www.schabell.org/2014/05/redhat-jboss-brms-online-workshop-coolstore-lab12-designing-rewards-process.html)
+
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 11 Installing BPM Suite)](http://www.schabell.org/2014/05/redhat-jboss-brms-online-workshop-coolstore-lab11-installing-bpmsuite.html)
 
 
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
-- v1.6 - JBoss BPM Suite 6.0.3 installer with user task reassignment claimed tasks to group after 2 minutes.
+- v1.6 - JBoss BPM Suite 6.0.3 installer with automated task reassignment.
 
 - v1.5 - JBoss BPM Suite 6.0.3 installer with optional docker installation.
 
