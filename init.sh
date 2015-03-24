@@ -4,7 +4,7 @@ AUTHORS="Andrew Block, Eric D. Schabell"
 PROJECT="git@github.com:jbossdemocentral/bpms-rewards-demo.git"
 PRODUCT="JBoss BPM Suite"
 JBOSS_HOME=./target/jboss-eap-6.1
-SERVER_DIR=$JBOSS_HOME/standalone/deployments/
+SERVER_DIR=$JBOSS_HOME/standalone/deployments
 SERVER_CONF=$JBOSS_HOME/standalone/configuration/
 SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
@@ -78,6 +78,10 @@ echo "  - setting up demo projects..."
 echo
 cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
 
+echo "  - setup email task notification users..."
+echo
+cp $SUPPORT_DIR/userinfo.properties $SERVER_DIR/business-central.war/WEB-INF/classes/
+
 echo "  - setting up standalone.xml configuration adjustments..."
 echo
 cp $SUPPORT_DIR/standalone.xml $SERVER_CONF
@@ -86,12 +90,29 @@ echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
 
-echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
-echo "Login into business central at:"
-echo
-echo "    http://localhost:8080/business-central  (u:erics / p:bpmsuite1!)"
-echo
-echo "$PRODUCT $VERSION $DEMO Setup Complete."
-echo
+echo "========================================================================"
+echo "=                                                                      ="
+echo "=  You can now start the $PRODUCT with:                         ="
+echo "=                                                                      ="
+echo "=   $SERVER_BIN/standalone.sh                           ="
+echo "=                                                                      ="
+echo "=  Login into business central at:                                     ="
+echo "=                                                                      ="
+echo "=    http://localhost:8080/business-central  (u:erics / p:bpmsuite1!)  ="
+echo "=                                                                      ="
+echo "=  If you want to see email notifications on user tasks, you will      ="
+echo "=  need to have a mail server running to accept SMTP requests on       ="
+echo "=  the default port 25. We include fakeSMTP java solution for you      ="
+echo "=  to capture email notifications, just start as root:                 ="
+echo "=                                                                      ="
+echo "=    $ sudo java -jar support/fakeSMTP.jar                             ="
+echo "=                                                                      ="
+echo "=  Be sure to start it by clicking on 'START SERVER' to avoid any      ="
+echo "=  connection errors when email notifications are triggered. Note      ="
+echo "=  that these errors will not stop the process from running.           ="
+echo "=                                                                      ="
+echo "=  $PRODUCT $VERSION $DEMO Setup Complete.            ="
+echo "=                                                                      ="
+echo "========================================================================"
 

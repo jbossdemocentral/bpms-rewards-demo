@@ -7,7 +7,7 @@ set AUTHORS=Andrew Block, Eric D. Schabell
 set PROJECT=git@github.com:jbossdemocentral/bpms-rewards-demo.git
 set PRODUCT=JBoss BPM Suite
 set JBOSS_HOME=%PROJECT_HOME%target\jboss-eap-6.1
-set SERVER_DIR=%JBOSS_HOME%\standalone\deployments\
+set SERVER_DIR=%JBOSS_HOME%\standalone\deployments
 set SERVER_CONF=%JBOSS_HOME%\standalone\configuration\
 set SERVER_BIN=%JBOSS_HOME%\bin
 set SRC_DIR=%PROJECT_HOME%installs
@@ -95,14 +95,38 @@ REM echo.
 REM xcopy /Y /Q "%SUPPORT_DIR%\1000_jbpm_demo_h2.sql" "%SERVER_DIR%\dashbuilder.war\WEB-INF\etc\sql"
 REM echo. 
 
+echo - setup email task notification users...
+echo.
+xcopy "%SUPPORT_DIR%\userinfo.properties" "%SERVER_DIR%\business-central.war\WEB-INF\classes\"
+
 echo - setting up standalone.xml configuration adjustments...
 echo.
 xcopy /Y /Q "%SUPPORT_DIR%\standalone.xml" "%SERVER_CONF%"
 echo.
 
 echo.
-echo You can now start the %PRODUCT% with %SERVER_BIN%\standalone.bat
-echo.
-
-echo %PRODUCT% %VERSION% %DEMO% Setup Complete.
+echo ========================================================================
+echo =                                                                     =
+echo =  You can now start the %PRODUCT% with:                         =
+echo =                                                                      =
+echo =   %SERVER_BIN%\standalone.sh                           =
+echo =                                                                      =
+echo =  Login into business central at:                                     =
+echo =                                                                      =
+echo =    http:\\localhost:8080\business-central  u:erics &  p:bpmsuite1!   =
+echo =                                                                      =
+echo =  If you want to see email notifications on user tasks, you will      =
+echo =  need to have a mail server running to accept SMTP requests on       =
+echo =  the default port 25. We include fakeSMTP java solution for you      =
+echo =  to capture email notifications, just start as admin:                =
+echo =                                                                      =
+echo =    $ java -jar support\fakeSMTP.jar                                  =
+echo =                                                                      =
+echo =  Be sure to start it by clicking on 'START SERVER' to avoid any      =
+echo =  connection errors when email notifications are triggered. Note      =
+echo =  that these errors will not stop the process from running.           =
+echo =                                                                      =
+echo =  %PRODUCT% %VERSION% %DEMO% Setup Complete.            =
+echo =                                                                      =
+echo ========================================================================
 echo.

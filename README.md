@@ -16,6 +16,15 @@ Option 1 - Install on your machine
 
 4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.1/bin directory.
 
+   ```
+   # To view automated email notifications, start provided server as root/admin (see Notes below):
+   #
+   $ sudo java -jar support/fakeSMTP.jar 
+   ```
+
+   In fakeSMTP GUI click 'START SERVER' button or you will get 'Could not connect to SMTP host' errors. This does not prevent 
+   the process from working, it just fails to send an email notification.
+
 5. Login to http://localhost:8080/business-central  (u:erics / p:bpmsuite1!).
 
 6. Rewards demo pre-installed as project.
@@ -41,6 +50,8 @@ Once installed you can use the JBoss BPM Suite logins:
 
    * u: mary   p: bpmsuite (manager)
 
+Note email notifications on user tasks will not work due to lack of port access. If you claim the task before 2 minutes expires and
+let it sit for longer than 1 minute without completing it will automatically reassign the task to the group.
 
 Option 3 - Generate docker install
 ----------------------------------
@@ -81,8 +92,19 @@ than 1 minutes it will te reassigned back into the group so other managers can c
 of 1 minutes is for demo purposes, should talk about days to complete instead as if a manager that claimed a
 task got sick and failed to complete the claimed task.
 
-There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com)
-that will show you how to build this demo from scratch. 
+Optional: A task notification has also been setup to alert the members of the group responsible if a task sits longer than 2 minutes
+without being started (claimed). This is an email notification which you can view using the provided simple java SMTP server 
+'fakeSMTP.jar' (from https://nilhcem.github.io/FakeSMTP), just start as root/admin user to catch sent notifications in the
+mailbox window provided:
+
+   ```
+   $ sudo java -jar support/fakeSMTP.jar 
+   ```
+
+   In fakeSMTP GUI click 'START SERVER' button or you will get 'Could not connect to SMTP host' errors. This does not prevent 
+   the process from working, it just fails to send an email notification.
+
+There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com) that will show you how to build this demo from scratch. 
 
 
 Supporting Articles
@@ -117,6 +139,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v1.7 - JBoss BPM Suite 6.0.3 installer with automated task email notifications.
 
 - v1.6 - JBoss BPM Suite 6.0.3 installer with automated task reassignment.
 
