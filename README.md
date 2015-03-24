@@ -109,6 +109,8 @@ There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com) tha
 
 Supporting Articles
 -------------------
+[Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 18 Automate Task Reassignment)](http://www.schabell.org/2015/03/redhat-jboss-bpmsuite-online-workshop-lab18-automate-task-reassignment.html)
+
 [3 shockingly easy ways into JBoss rules, events, planning & BPM](http://www.schabell.org/2015/01/3-shockingly-easy-ways-into-jboss-brms-bpmsuite.html)
 
 [Jump Start Your Rules, Events, Planning and BPM Today](http://www.schabell.org/2014/12/jump-start-rules-events-planning-bpm-today.html)
