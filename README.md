@@ -55,6 +55,7 @@ let it sit for longer than 1 minute without completing it will automatically rea
 
 Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
 
+
 Option 3 - Generate docker install
 ----------------------------------
 The following steps can be used to configure and run the demo in a docker container
