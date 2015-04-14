@@ -14,7 +14,7 @@ Option 1 - Install on your machine
 
 3. Run 'init.sh' or 'init.bat' file. 'init.bat' must be run with Administrative privileges.
 
-4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.1/bin directory.
+4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.4/bin directory.
 
    ```
    # To view automated email notifications, start provided server as root/admin (see Notes below):
@@ -141,6 +141,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v1.8 - JBoss BPM Suite 6.1.0 installer with rewards demo installed.
 
 - v1.7 - JBoss BPM Suite 6.0.3 installer with automated task email notifications.
 
