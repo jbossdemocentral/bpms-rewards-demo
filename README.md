@@ -163,7 +163,7 @@ See the tagged releases for the following versions of the product:
 
 [![Video Rewards Run](https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image309.png)](http://vimeo.com/ericschabell/bpms-hr-employee-rewards-demo-run)
 
-![Process](https://github.com/jbossdemocentral/bpms-rewards-demo/blob/master/docs/demo-images/rewards-process.png?raw=true)
+![Process](https://raw.githubusercontent.com/jbossdemocentral/bpms-rewards-demo/6.1/docs/demo-images/rewards-process.png)
 
-![Process & Task Dashboard](https://github.com/jbossdemocentral/bpms-rewards-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
+![Process & Task Dashboard](https://raw.githubusercontent.com/jbossdemocentral/bpms-rewards-demo/6.1/docs/demo-images/mock-bpm-data.png)
 
