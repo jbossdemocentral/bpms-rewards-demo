@@ -165,5 +165,5 @@ See the tagged releases for the following versions of the product:
 
 ![Process](https://github.com/jbossdemocentral/bpms-rewards-demo/blob/master/docs/demo-images/rewards-process.png?raw=true)
 
-![Process & Task Dashboard](https://github.com/jbossdemocentral/bpms-customer-evaluation-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
+![Process & Task Dashboard](https://github.com/jbossdemocentral/bpms-rewards-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
 
