@@ -53,6 +53,8 @@ Once installed you can use the JBoss BPM Suite logins:
 Note email notifications on user tasks will not work due to lack of port access. If you claim the task before 2 minutes expires and
 let it sit for longer than 1 minute without completing it will automatically reassign the task to the group.
 
+Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
+
 Option 3 - Generate docker install
 ----------------------------------
 The following steps can be used to configure and run the demo in a docker container
