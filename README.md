@@ -14,7 +14,7 @@ Option 1 - Install on your machine
 
 3. Run 'init.sh' or 'init.bat' file. 'init.bat' must be run with Administrative privileges.
 
-4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.1/bin directory.
+4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.4/bin directory.
 
    ```
    # To view automated email notifications, start provided server as root/admin (see Notes below):
@@ -52,6 +52,9 @@ Once installed you can use the JBoss BPM Suite logins:
 
 Note email notifications on user tasks will not work due to lack of port access. If you claim the task before 2 minutes expires and
 let it sit for longer than 1 minute without completing it will automatically reassign the task to the group.
+
+Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
+
 
 Option 3 - Generate docker install
 ----------------------------------
@@ -142,6 +145,8 @@ Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
+- v1.8 - JBoss BPM Suite 6.1.0 installer with rewards demo installed.
+
 - v1.7 - JBoss BPM Suite 6.0.3 installer with automated task email notifications.
 
 - v1.6 - JBoss BPM Suite 6.0.3 installer with automated task reassignment.
@@ -161,7 +166,7 @@ See the tagged releases for the following versions of the product:
 
 [![Video Rewards Run](https://raw.githubusercontent.com/eschabell/erics-images/master/brms_bpms_workshop/image309.png)](http://vimeo.com/ericschabell/bpms-hr-employee-rewards-demo-run)
 
-![Process](https://github.com/jbossdemocentral/bpms-rewards-demo/blob/master/docs/demo-images/rewards-process.png?raw=true)
+![Process](https://raw.githubusercontent.com/jbossdemocentral/bpms-rewards-demo/master/docs/demo-images/rewards-process.png)
 
-![Process & Task Dashboard](https://github.com/jbossdemocentral/bpms-customer-evaluation-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
+![Process & Task Dashboard](https://raw.githubusercontent.com/jbossdemocentral/bpms-rewards-demo/master/docs/demo-images/mock-bpm-data.png)
 
