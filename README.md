@@ -1,6 +1,6 @@
 JBoss BPM Suite Rewards Demo
 ============================
-This is the HR employee rewards demo that provides exammples of human task integration, form designer
+This is the HR employee rewards demo that provides examples of human task integration, form designer
 and a custom email work item handler.
 
 There are three options available to you for using this demo; local, OpenShift and Docker.
