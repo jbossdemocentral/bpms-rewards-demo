@@ -3,7 +3,7 @@ JBoss BPM Suite Rewards Demo
 This is the HR employee rewards demo that provides examples of human task integration, form designer
 and a custom email work item handler.
 
-There are three options available to you for using this demo; local, OpenShift and Docker.
+There are three options available to you for using this demo; local, OpenShift and containerized.
 
 
 Option 1 - Install on your machine
@@ -153,7 +153,7 @@ See the tagged releases for the following versions of the product:
 
 - v1.6 - JBoss BPM Suite 6.0.3 installer with automated task reassignment.
 
-- v1.5 - JBoss BPM Suite 6.0.3 installer with optional docker installation.
+- v1.5 - JBoss BPM Suite 6.0.3 installer with optional containerized installation.
 
 - v1.4 - moved to JBoss Demo Central, updated windows init.bat support and one click install button.
 
