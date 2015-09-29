@@ -112,6 +112,8 @@ There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com) tha
 
 Supporting Articles
 -------------------
+- [7 Steps to Your First Process with JBoss BPM Suite Starter Kit](http://www.schabell.org/2015/08/7-steps-first-process-jboss-bpmsuite-starter-kit.html)
+
 - [Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 19 Automated e-mail task notifications)](http://www.schabell.org/2015/03/redhat-jboss-bpmsuite-online-workshop-lab19-automate-task-notification.html)
 
 - [Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 18 Automate Task Reassignment)](http://www.schabell.org/2015/03/redhat-jboss-bpmsuite-online-workshop-lab18-automate-task-reassignment.html)
