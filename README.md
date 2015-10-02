@@ -112,6 +112,10 @@ There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com) tha
 
 Supporting Articles
 -------------------
+- [Quick Tour #6: Build & run a JBoss BPM Suite project (video)](http://www.schabell.org/2015/10/quick-tour-6-build-and-run-project.html)
+
+- [Quick Tour #5: How to import a project into JBoss BPM Suite (video)](http://www.schabell.org/2015/09/quick-tour-5-how-to-import-project.html)
+
 - [7 Steps to Your First Process with JBoss BPM Suite Starter Kit](http://www.schabell.org/2015/08/7-steps-first-process-jboss-bpmsuite-starter-kit.html)
 
 - [Red Hat JBoss BPM Suite - Online Workshop Building a Rewards Demo (Lab 19 Automated e-mail task notifications)](http://www.schabell.org/2015/03/redhat-jboss-bpmsuite-online-workshop-lab19-automate-task-notification.html)
@@ -148,6 +152,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v1.9 - JBoss BPM Suite 6.2.0, JBoss EAP 6.4.3 and  rewards demo installed.
 
 - v1.8 - JBoss BPM Suite 6.1.0 installer with rewards demo installed.
 
