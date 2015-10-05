@@ -42,7 +42,7 @@ echo #################################################################
 echo.
 
 REM make some checks first before proceeding.	
-if exist %SRC_DIR%\%EAP% (
+if exist "%SRC_DIR%\%EAP%" (
         echo Product sources are present...
         echo.
 ) else (
@@ -52,7 +52,7 @@ if exist %SRC_DIR%\%EAP% (
         GOTO :EOF
 )
 
-if exist %SRC_DIR%\%BPMS% (
+if exist "%SRC_DIR%\%BPMS%" (
         echo Product sources are present...
         echo.
 ) else (
@@ -63,7 +63,7 @@ if exist %SRC_DIR%\%BPMS% (
 )
 
 REM Remove the old JBoss instance, if it exists.
-if exist %JBOSS_HOME% (
+if exist "%JBOSS_HOME%" (
          echo - removing existing JBoss product install...
          echo.
          rmdir /s /q "%JBOSS_HOME%"
@@ -72,7 +72,7 @@ if exist %JBOSS_HOME% (
 REM Run installers.
 echo EAP installer running now...
 echo.
-call java -jar %SRC_DIR%/%EAP% %SUPPORT_DIR%\installation-eap -variablefile %SUPPORT_DIR%\installation-eap.variables
+call java -jar "%SRC_DIR%/%EAP%" "%SUPPORT_DIR%\installation-eap" -variablefile "%SUPPORT_DIR%\installation-eap.variables"
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
@@ -83,7 +83,7 @@ if not "%ERRORLEVEL%" == "0" (
 
 echo JBoss BPM Suite installer running now...
 echo.
-call java -jar %SRC_DIR%/%BPMS% %SUPPORT_DIR%\installation-bpms -variablefile %SUPPORT_DIR%\installation-bpms.variables
+call java -jar "%SRC_DIR%/%BPMS%" "%SUPPORT_DIR%\installation-bpms" -variablefile "%SUPPORT_DIR%\installation-bpms.variables"
 
 if not "%ERRORLEVEL%" == "0" (
 	echo Error Occurred During %PRODUCT% Installation!
@@ -112,7 +112,7 @@ REM echo.
 
 echo - setup email task notification users...
 echo.
-xcopy "%SUPPORT_DIR%\userinfo.properties" "%SERVER_DIR%\business-central.war\WEB-INF\classes\"
+xcopy /Y /Q "%SUPPORT_DIR%\userinfo.properties" "%SERVER_DIR%\business-central.war\WEB-INF\classes\"
 
 echo - setting up standalone.xml configuration adjustments...
 echo.
@@ -121,14 +121,14 @@ echo.
 
 echo.
 echo ========================================================================
-echo =                                                                     =
+echo =                                                                      =
 echo =  You can now start the %PRODUCT% with:                         =
 echo =                                                                      =
-echo =   %SERVER_BIN%\standalone.sh                           =
+echo =   %SERVER_BIN%\standalone.bat
 echo =                                                                      =
 echo =  Login into business central at:                                     =
 echo =                                                                      =
-echo =    http:\\localhost:8080\business-central  u:erics &  p:bpmsuite1!   =
+echo =    http:\\localhost:8080\business-central  u:erics ^&  p:bpmsuite1^!   =
 echo =                                                                      =
 echo =  If you want to see email notifications on user tasks, you will      =
 echo =  need to have a mail server running to accept SMTP requests on       =
@@ -141,7 +141,7 @@ echo =  Be sure to start it by clicking on 'START SERVER' to avoid any      =
 echo =  connection errors when email notifications are triggered. Note      =
 echo =  that these errors will not stop the process from running.           =
 echo =                                                                      =
-echo =  %PRODUCT% %VERSION% %DEMO% Setup Complete.            =
+echo =  %PRODUCT% %VERSION% %DEMO% Setup Complete.                    =
 echo =                                                                      =
 echo ========================================================================
 echo.
