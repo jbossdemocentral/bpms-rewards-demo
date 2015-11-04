@@ -1,5 +1,5 @@
 id: jbossdemocentral-bpms-rewards
-title: This is the HR employee rewards demo that provides examples of human task integration, form designer and a custom email work item handler.
+title: JBoss BPM Suite Rewards Demo
 github_repo_url: https://github.com/jbossdemocentral/bpms-rewards-demo
 technologies:
   - JBoss EAP
