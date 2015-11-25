@@ -92,10 +92,12 @@ if not "%ERRORLEVEL%" == "0" (
 	GOTO :EOF
 )
 
+call set NOPAUSE=true
+
 echo.
 echo Applying JBoss EAP patch now...
 echo.
-call %JBOSS_HOME%/bin/jboss-cli.bat --command='patch apply %SRC_DIR%/%EAP_PATCH%'
+call %JBOSS_HOME%/bin/jboss-cli.bat --command="patch apply %SRC_DIR%/%EAP_PATCH% --override-all"
 
 echo.
 echo JBoss BPM Suite installer running now...
