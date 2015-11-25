@@ -111,7 +111,7 @@ cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
 
 echo "  - setting up demo projects..."
 echo
-#cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
 
 echo "  - setup email task notification users..."
 echo
@@ -128,6 +128,12 @@ cp $SUPPORT_DIR/userinfo.properties $SERVER_DIR/business-central.war/WEB-INF/cla
 echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
+
+# Optional: uncomment this to install mock data for BPM Suite.
+#
+#echo "  - setting up mock bpm dashboard data..."
+#cp $SUPPORT_DIR/1000_jbpm_demo_h2.sql $SERVER_DIR/dashbuilder.war/WEB-INF/etc/sql
+#echo
 
 echo
 echo "========================================================================"
@@ -151,7 +157,7 @@ echo "=  Be sure to start it by clicking on 'START SERVER' to avoid any      ="
 echo "=  connection errors when email notifications are triggered. Note      ="
 echo "=  that these errors will not stop the process from running.           ="
 echo "=                                                                      ="
-echo "=  $PRODUCT $VERSION $DEMO Setup Complete.            ="
+echo "=  $PRODUCT $VERSION $DEMO Setup Complete.                    ="
 echo "=                                                                      ="
 echo "========================================================================"
 
