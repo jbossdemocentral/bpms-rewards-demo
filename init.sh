@@ -56,7 +56,7 @@ if [ -r $SRC_DIR/$EAP_PATCH ] || [ -L $SRC_DIR/$EAP_PATCH ]; then
 	echo Product patches are present...
 	echo
 else
-	echo Need to download $EAP package from the Customer Portal 
+	echo Need to download $EAP_PATCH package from the Customer Portal 
 	echo and place it in the $SRC_DIR directory to proceed...
 	echo
 	exit
