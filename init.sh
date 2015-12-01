@@ -105,6 +105,7 @@ if [ $? -ne 0 ]; then
 	exit
 fi
 
+echo
 echo "  - enabling demo accounts role setup in application-roles.properties file..."
 echo
 cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
