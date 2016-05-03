@@ -3,7 +3,8 @@ JBoss BPM Suite Rewards Demo
 This is the HR employee rewards demo that provides examples of human task integration, form designer
 and a custom email work item handler.
 
-There are three options available to you for using this demo; local, OpenShift and containerized.
+There are four options available to you for using this demo; local, Openshift Online, Red Hat CDK OpenShift Enterprise and
+Containerized.
 
 
 Option 1 - Install on your machine
@@ -56,7 +57,15 @@ let it sit for longer than 1 minute without completing it will automatically rea
 Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
 
 
-Option 3 - Generate containerized installation
+Option 3 - Install on Red Hat CDK OpenShift Enterprise image
+------------------------------------------------------------
+The following steps can be used to install this demo on OpenShift Enterprise using the
+Red Hat Container Development Kit (CDK)
+
+1. [App Dev Cloud with JBoss BPM Rewards Demo](https://github.com/redhatdemocentral/rhcs-rewards-demo)
+
+
+Option 4 - Generate containerized installation
 ----------------------------------------------
 The following steps can be used to configure and run the demo in a container
 
@@ -112,6 +121,8 @@ There is a workshop [available online](http://bpmworkshop-onthe.rhcloud.com) tha
 
 Supporting Articles
 -------------------
+- [How to put the JBoss HR Employee Rewards project into the Cloud](http://www.schabell.org/2016/05/howto-put-jboss-hr-employee-rewards-into-cloud.html)
+
 - [Quick Tour #6: Build & run a JBoss BPM Suite project (video)](http://www.schabell.org/2015/10/quick-tour-6-build-and-run-project.html)
 
 - [Quick Tour #5: How to import a project into JBoss BPM Suite (video)](http://www.schabell.org/2015/09/quick-tour-5-how-to-import-project.html)
@@ -152,6 +163,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v2.1 - JBoss BPM Suite 6.2.0-BZ-1299002 on JBoss EAP 6.4.4 with travel agency installed and RH CDK on OSE Cloud install option.
 
 - v2.0 - JBoss BPM Suite 6.2.0-BZ-1299002 on JBoss EAP 6.4.4 with rewards demo installed.
 
