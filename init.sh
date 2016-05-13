@@ -1,6 +1,6 @@
 #!/bin/sh 
 DEMO="Rewards Demo"
-AUTHORS="Andrew Block, Eric D. Schabell"
+AUTHORS="Andrew Block, Eric D. Schabell, Duncan Doyle"
 PROJECT="git@github.com:jbossdemocentral/bpms-rewards-demo.git"
 PRODUCT="JBoss BPM Suite"
 JBOSS_HOME=./target/jboss-eap-6.4
@@ -10,10 +10,10 @@ SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects
-BPMS=jboss-bpmsuite-installer-6.2.0.BZ-1299002.jar
+BPMS=jboss-bpmsuite-6.3.0.GA-installer.jar
 EAP=jboss-eap-6.4.0-installer.jar
-EAP_PATCH=jboss-eap-6.4.4-patch.zip
-VERSION=6.2
+EAP_PATCH=jboss-eap-6.4.7-patch.zip
+VERSION=6.3
 
 # wipe screen.
 clear 
@@ -32,7 +32,7 @@ echo "##     ####  #     #     #    ###  ##### #####   #   #####     ##"
 echo "##                                                             ##"   
 echo "##                                                             ##"   
 echo "##  brought to you by,                                         ##"   
-echo "##             ${AUTHORS}                  ##"
+echo "##             ${AUTHORS}    ##"
 echo "##                                                             ##"   
 echo "##  ${PROJECT}      ##"
 echo "##                                                             ##"   
