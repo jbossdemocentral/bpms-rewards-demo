@@ -33,39 +33,12 @@ Option 1 - Install on your machine
 7. Read the documentation found in the docs directory & enjoy JBoss BPM Suite!
 
 
-Option 2 - Install with one click in xPaaS (bpmPaaS)
-----------------------------------------------------
-After clicking button, ensure `Gear` size is set to `medium`:
-
-[![Click to install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Install bpmPaaS.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=https://raw.githubusercontent.com/jbossdemocentral/cartridge-bpmPaaS-rewards-demo/master/metadata/manifest.yml&name=rewards&gear_profile=medium&initial_git_url=)
-
-Once installed you can use the JBoss BPM Suite logins: 
-
-   * u:erics   p: bpmsuite  (admin)
-
-   * u: alan   p: bpmsuite  (analyst)
-
-   * u: daniel p: bpmsuite (developer)
-
-   * u: ursla  p: bpmsuite (user)
-
-   * u: mary   p: bpmsuite (manager)
-
-Note email notifications on user tasks will not work due to lack of port access. If you claim the task before 2 minutes expires and
-let it sit for longer than 1 minute without completing it will automatically reassign the task to the group.
-
-Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
+Option 2 - Install on OpenShift
+-------------------------------
+Running this demo in a container on any OpenShift Container Platform is [available at Red Hat Demo Central](https://github.com/redhatdemocentral/rhcs-rewards-demo).
 
 
-Option 3 - Install on Red Hat CDK OpenShift Enterprise image
-------------------------------------------------------------
-The following steps can be used to install this demo on OpenShift Enterprise using the
-Red Hat Container Development Kit (CDK)
-
-1. [App Dev Cloud with JBoss BPM Rewards Demo](https://github.com/redhatdemocentral/rhcs-rewards-demo)
-
-
-Option 4 - Generate containerized installation
+Option 3 - Generate containerized installation
 ----------------------------------------------
 The following steps can be used to configure and run the demo in a container
 
